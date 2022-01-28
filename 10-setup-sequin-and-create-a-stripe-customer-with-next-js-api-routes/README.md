@@ -14,8 +14,6 @@ To create a Stripe customer, we need to use our private API key, meaning this lo
 
 We create a new API route to handle adding a stripe customer.
 
----
-
 ## 🔁 Setup Sequin
 
 With your Stripe account in place, you can now setup your Sequin account and sync:

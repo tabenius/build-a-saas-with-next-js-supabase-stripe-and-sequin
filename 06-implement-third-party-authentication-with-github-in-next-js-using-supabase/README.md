@@ -2,7 +2,7 @@
 
 ## ✅ Sequin Remix: No changes
 
-Add GitHub authentication with `/login` and `/logout` pages just like Jon. Then, skip straight to [⏩ Lesson 10 ⏩](/10-create-a-stripe-customer-with-next-js-api-routes).
+Add GitHub authentication with `/login` and `/logout` pages just like Jon. Then, skip straight to [⏩ Lesson 10 ⏩](/10-setup-sequin-and-create-a-stripe-customer-with-next-js-api-routes).
 
 ## [📹 Jon's Video](https://egghead.io/lessons/supabase-implement-third-party-authentication-with-github-in-next-js-using-supabase) & Overview
 
@@ -14,4 +14,4 @@ Additionally, we implement `/login` and `/logout` pages to handle authentication
 
 ---
 
-## [👉 Next lesson ⏩](/10-create-a-stripe-customer-with-next-js-api-routes)
+## [👉 Next lesson ⏩](/10-setup-sequin-and-create-a-stripe-customer-with-next-js-api-routes)
