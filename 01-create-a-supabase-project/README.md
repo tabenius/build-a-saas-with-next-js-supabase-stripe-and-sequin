@@ -1,12 +1,10 @@
 # Create a Supabase Project
 
-## ✅  Sequin Remix: No changes
+## ✅Sequin Remix: No changes
 
 Setup your supabase project just like Jon does below!
 
----
-
-## [📹 Video](https://egghead.io/lessons/supabase-create-a-supabase-project)
+## [📹 Jon's Video](https://egghead.io/lessons/supabase-create-a-supabase-project) & Overview
 
 Supabase is a backend-as-a-service (BaaS) that makes it super simple to create databases, tables, columns and input data.
 

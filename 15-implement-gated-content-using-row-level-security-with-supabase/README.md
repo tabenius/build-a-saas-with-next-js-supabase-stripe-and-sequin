@@ -1,10 +1,10 @@
 # Implement Gated Content Using Row Level Security with Supabase
 
-**[📹 Video](https://egghead.io/lessons/supabase-implement-gated-content-using-row-level-security-with-supabase)**
+## 🔁 Sequin Remix: Add RLS to your Stripe tables
 
-> **🔁 Sequin Simplifier:** Follow Jon's steps to create a `premium_content` table, add some premium content, and enable RLS. Then, when you implement the RLS policy, use the SQL query below to verify that the logged in user is subscribed using your Sequin Stripe tables. Finally, replicate Jon's steps to implement `react-player` and show off your premium content!
+Follow Jon's steps to create populate, and secure a `premium_content` table. Then, when you implement the RLS policy, use the SQL query below to verify that the logged in user is subscribed using your Sequin Stripe tables. Finally, replicate Jon's steps to implement `react-player` and show off your premium content!
 
----
+## [📹 Jon's Video](https://egghead.io/lessons/supabase-implement-gated-content-using-row-level-security-with-supabase) & Overview
 
 We're using Row Level Security (RLS) to enforce authorization rules for each row in the database. This applies to the entire row, not specific columns. Therefore, if we want to create some premium content that is only available to our subscribed users, we need to create another table. Again, we can reference the lesson table's ID, using a foreign key relationship.
 
@@ -18,7 +18,7 @@ Lastly, we want to display our video (hosted on YouTube) in an inline video play
 
 ## 🔁 Add RLS to the `premium_content` table
 
-With Sequin syncing your Stripe data right into your Supabase database, you didn't need to create a `profile` table. So when you implement RLS on the your `premium_content` table, you'll need to use query that pulls the data from your `stripe` tables.
+With Sequin syncing your Stripe data right into your Supabase database, you didn't need to create a `profile` table. So when you implement RLS on the your `premium_content` table, you'll need to use a query that pulls the data from your `stripe` tables.
 
 To do so, follow Jon's steps to add RLS to the `premium_content` table - but when you create the `subscribed users can select premium content` policy, use the query below:
 
@@ -32,8 +32,8 @@ exists (
         AND(subscription.status = 'active'::text))
 ```
 
-This query will resolve to `true` if the logged in user has an `active` subscription - allowing the user to see their premium content.
+This query  will resolve to `true` if the logged in user has an `active` subscription - allowing the user to see their premium content.
 
-[👉 Next lesson](/16-use-stripe-js-to-query-product-data-and-pre-render-with-next-js)
+---
 
-
+## [👉 Next lesson](/16-use-stripe-js-to-query-product-data-and-pre-render-with-next-js)

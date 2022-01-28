@@ -1,10 +1,10 @@
 # Charge Customer for Stripe Subscription in Next.js
 
-**[📹 Video](https://egghead.io/lessons/next-js-charge-customer-for-stripe-subscription-in-next-js)**
+## 🔁 Sequin Remix: Just remember `stripe_customer_id` :)
 
-> **🔁 Sequin Simplifier:** No major changes - follow Jon as he completes the endpoint. Just ensure that when referencing the Stripe customer_id you use the correct variable: `stripe_customer_id` :) Then, skip all the webhooks and jump ahead to [⏩ Lesson 23 ⏩](/23-create-a-client-page-that-requires-authentication-in-next-js-using-getserversideprops)
+No major changes - follow Jon as he completes the endpoint. Just ensure that when referencing the Stripe `customer_id` you use the correct variable: `stripe_customer_id` :) Then, skip all the webhooks and jump ahead to [⏩ Lesson 23 ⏩](/23-create-a-client-page-that-requires-authentication-in-next-js-using-getserversideprops)
 
----
+## [📹 Jon's Video](https://egghead.io/lessons/next-js-charge-customer-for-stripe-subscription-in-next-js) & Overview
 
 Stripe makes taking payments easy. We can use the Stripe library to create a checkout session. This takes a configuration object, which describes how we want to charge our customer, the method we would like to use, and where we want to redirect the user based on a successful transaction or cancellation.
 
@@ -14,4 +14,4 @@ Lastly, we can use the test credit card for Stripe to confirm everything is work
 
 ---
 
-[👉 Next lesson](/23-create-a-client-page-that-requires-authentication-in-next-js-using-getserversideprops)
+## [👉 Next lesson ⏩](/23-create-a-client-page-that-requires-authentication-in-next-js-using-getserversideprops)

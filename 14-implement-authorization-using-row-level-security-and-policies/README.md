@@ -1,24 +1,22 @@
 # Implement Authorization Using Row Level Security and Policies
 
-**[📹 Video](https://egghead.io/lessons/supabase-implement-authorization-using-row-level-security-and-policies)**
+## 🔁 Sequin Remix: Add RLS to your Stripe tables
 
-> **🔁 Sequin Simplifier:** Follow Jon's steps to add RLS to the `lessons` table. Then, when he adds RLS to his profile table, you'll instead follow the steps below to add RLS to your `stripe` tables.
+Follow Jon's steps to add RLS to the `lessons` table. Then, when he adds RLS to his profile table, you'll instead follow the steps below to add RLS to your `stripe` tables.
 
----
+## [📹 Jon's Video](https://egghead.io/lessons/supabase-implement-authorization-using-row-level-security-and-policies) & Overview
 
 Row level security is a feature of PostgreSQL, that secures our database by automatically denying all read and write requests. We can then create policies to enable particular actions for specific tables. This is similar to declaring an SQL where clause that is automatically appended to every query.
 
 We use the Supabase dashboard to write a simple select policy. This allows anyone (signed in or not) to view rows from the lesson table.
 
-Taking this concept a little further, we create a select policy for the profile table. This will allow any logged in user to select their specific profile.
+~~Taking this concept a little further, we create a select policy for the profile table. This will allow any logged in user to select their specific profile.~~
 
 Row level security is a powerful way to implement authorization, as it is enforced by the database itself, and runs for each row returned by a query. No need to go through an API to determine whether the user should have access or not. This can drastically improve the performance and reliability of our data fetching, as we can remove an unnecessary hop! 🎉
 
----
-
 ## 🔁 Manually add RLS to Stripe
 
-The Supabase dashboard only allows you to add policies to tables in the `public` schema. To add RLS to your Stripe tables, you'll use the **SQL Editor** to manually run statements to apply RLS policies. Luckily, they are pretty simple:
+The Supabase dashboard only allows you to add policies to tables in the `public` schema (...for now 🤞). To add RLS to your Stripe tables, you'll use the **SQL Editor** to manually run statements to apply RLS policies. Luckily, they are pretty simple:
 
 ### Add RLS to `stripe.customer`
 
@@ -83,4 +81,6 @@ Now, ensure that the `stripe.subscription` table is secure with an RLS policy. T
 
 All your sensitive stripe data is now secure. Now, in the next lesson, you'll continue to extend the RLS policies.
 
-[👉 Next lesson](/15-implement-gated-content-using-row-level-security-with-supabase)
+---
+
+## [👉 Next lesson](/15-implement-gated-content-using-row-level-security-with-supabase)
