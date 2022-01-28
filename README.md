@@ -13,19 +13,21 @@
 
 For your frontend, this application will be using Next.js and Tailwind CSS. You will learn how to maneuver around an app and build a strong static pricing page.
 
-For your backend AND authentication, we will make use of Supabase. Supabase is open source and is all of the backend services that you will need to build your site. It includes a dedicated and scalable Postgres database and user management with Row Level Security!
+For your backend AND authentication, we will make use of Supabase and Sequin.
 
-For payments, you will be using Stripe. It will be an individual payment checkout system that will create and update users' subscriptions.
+Supabase is open source and is all of the backend services that you will need to build your site. It includes a dedicated and scalable Postgres database and user management with Row Level Security!
 
-Lastly, you'll sync all your Stripe data directly to your Supabase database using Sequin. Simplifying your architecture by allowing you to dirrectly query your database for Stripe data and skip all the webhooks.
+Sequin will sync all your Stripe data directly to your Supabase database. Sequin will handle all the webhooks and API calls so you can work with your Stripe data natively in Supabase.
+
+Lastly, for payments, you will be using Stripe. It will be an individual payment checkout system that will create and update users' subscriptions.
 
 Jon & Eric will take you through all of this and more in ~~just 1 hour and 10 minutes~~ 50 minutes!
 
 ## 🔁 Why Remix?
 
-Sequin and Supabase fit together. More and more developers are starting to use Sequin to sync their API data into Supabase so they can build faster. Instead of setting up webhooks, wrangling the API params, and gluing together to keep data up to date - you can just use Supabase to query their Stripe data dirrectly.
+Sequin and Supabase fit together. We are seeing more and more developers using Sequin to sync their API data into Supabase so they can build faster. Instead of setting up webhooks, wrangling API params, and gluing together functions to keep data up to date - you can just use  Sequin.
 
-Yes, we could have written a completely new tutorial. But Jon's tutorial is amazing. We thought we could build off the foundation set by Jon to show more developers how Sequin fits in. And because this is a fork, you can compare the approach of building with and without Sequin.
+Yes, we could have written a completely new tutorial. But this tutorial is amazing. Building off the foundation set by Jon allows us to show more developers how Sequin fits in. And because this is a fork, you can compare the approach of building with and without Sequin.
 
 You'll find that with Sequin you don't need to build as much.
 
@@ -33,13 +35,11 @@ You don't need to create a profile table and the associated triggers and functio
 
 You don't need to touch webhooks at all. No ngrok, switch statements, or issues with your data mismatching Stripe.
 
-And you don't need to created nested Stripe API queries to pull in your products or prices. You can just use Supabase.
+And you don't need to create nested Stripe API queries to pull in your products or prices. You can just use Supabase.
 
-We're optimistic that as Supabase improves multi-schema support, this will only get easier and easier. Today, there are some manual RLS queries and permission grants we can easily imagine going away soon.
+Today, there are some manual RLS queries and permission grants we can easily imagine going away soon. We're optimistic that as Supabase improves multi-schema support, this will only get easier and easier.
 
-We're both betting on the power of Postgres - so let's see how far we can take this!
-
-## 🎓 Instructors
+## 🎓 Instructor(s)
 
 This course was originally created by [Jon Meyers](https://jonmeyers.io). Jon is a Software Engineer, Educator and Hip Hop Producer from Melbourne, Australia. He's passionate about web development and enabling others to build amazing things!
 
@@ -54,9 +54,9 @@ Learn more about how Sequin works by [creating an account](https://app.sequin.io
 ## 🗺 Table of Contents
 
 > Remix Key:
->   ✅ : The lessons requires no alterations
->   🔁 : Remix. You'll see some changes here in the repo.
->   ~~Skipped all together~~
+>   * ✅ : The lessons requires no alterations
+>   * 🔁 : Remix. You'll see some changes here in the repo.
+>   * ~~Skipped all together~~
 
 1. ✅ [Create a Supabase Project](/01-create-a-supabase-project)
 2. ✅ [Create a Table in Supabase](/02-create-a-table-in-supabase)
