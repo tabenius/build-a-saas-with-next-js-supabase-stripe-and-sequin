@@ -1,20 +1,14 @@
-import initStripe from "stripe";
+import { supabase } from "../utils/supabase";
 import { useUser } from "../context/user";
-import axios from "axios";
-import { loadStripe } from "@stripe/stripe-js";
 
 const Pricing = ({ plans }) => {
   const { user, login, isLoading } = useUser();
 
-  const processSubscription = (planId) => async () => {
-    const { data } = await axios.get(`/api/subscription/${planId}`);
-    const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
-    await stripe.redirectToCheckout({ sessionId: data.id });
-  };
-
-  const showSubscribeButton = !!user && !user.is_subscribed;
+  const showSubscribeButton =
+    !!user && user.subscription[0].stripe_subscription_status !== "active";
   const showCreateAccountButton = !user;
-  const showManageSubscriptionButton = !!user && user.is_subscribed;
+  const showManageSubscriptionButton =
+    !!user && user.subscription[0].stripe_subscription_status === "active";
 
   return (
     <div className="w-full max-w-3xl mx-auto py-16 flex justify-around">
@@ -26,11 +20,7 @@ const Pricing = ({ plans }) => {
           </p>
           {!isLoading && (
             <div>
-              {showSubscribeButton && (
-                <button onClick={processSubscription(plan.id)}>
-                  Subscribe
-                </button>
-              )}
+              {showSubscribeButton && <button>Subscribe</button>}
               {showCreateAccountButton && (
                 <button onClick={login}>Create Account</button>
               )}
@@ -46,28 +36,11 @@ const Pricing = ({ plans }) => {
 };
 
 export const getStaticProps = async () => {
-  const stripe = initStripe(process.env.STRIPE_SECRET_KEY);
-
-  const { data: prices } = await stripe.prices.list();
-
-  const plans = await Promise.all(
-    prices.map(async (price) => {
-      const product = await stripe.products.retrieve(price.product);
-      return {
-        id: price.id,
-        name: product.name,
-        price: price.unit_amount,
-        interval: price.recurring.interval,
-        currency: price.currency,
-      };
-    })
-  );
-
-  const sortedPlans = plans.sort((a, b) => a.price - b.price);
+  const { data: plans } = await supabase.from("plans").select("*");
 
   return {
     props: {
-      plans: sortedPlans,
+      plans,
     },
   };
 };

@@ -1,4 +1,4 @@
-import initStripe from "stripe";
+import { supabase } from "../utils/supabase";
 
 const Pricing = ({ plans }) => {
   return (
@@ -16,28 +16,11 @@ const Pricing = ({ plans }) => {
 };
 
 export const getStaticProps = async () => {
-  const stripe = initStripe(process.env.STRIPE_SECRET_KEY);
-
-  const { data: prices } = await stripe.prices.list();
-
-  const plans = await Promise.all(
-    prices.map(async (price) => {
-      const product = await stripe.products.retrieve(price.product);
-      return {
-        id: price.id,
-        name: product.name,
-        price: price.unit_amount,
-        interval: price.recurring.interval,
-        currency: price.currency,
-      };
-    })
-  );
-
-  const sortedPlans = plans.sort((a, b) => a.price - b.price);
+  const { data: plans } = await supabase.from("plans").select("*");
 
   return {
     props: {
-      plans: sortedPlans,
+      plans,
     },
   };
 };

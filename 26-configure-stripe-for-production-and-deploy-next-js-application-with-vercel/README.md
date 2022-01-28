@@ -2,6 +2,8 @@
 
 **[📹 Video](https://egghead.io/lessons/supabase-configure-stripe-for-production-and-deploy-next-js-application-with-vercel)**
 
+> **✅ No changes:** Deploy your app to Vercel just like Jon!
+
 There are a few steps to go through to push our application and all of our services to production!
 
 1. In order to "activate" our Stripe account, we need to fill out some details about our business.
@@ -14,7 +16,3 @@ There are a few steps to go through to push our application and all of our servi
 8. Create a function hook in Supabase to use our Vercel domain
 
 We now have a SaaS application deployed to the Internet that we can start making that side hustle money from!! 🎉
-
----
-
-Enjoyed the course? Follow me on [Twitter](https://twitter.com/jonmeyers_io) and subscribe to my [YouTube channel](https://www.youtube.com/channel/UCPitAIwktfCfcMR4kDWebDQ).

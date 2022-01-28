@@ -18,9 +18,9 @@ const Dashboard = () => {
       {!isLoading && (
         <>
           <p className="mb-6">
-            {user?.is_subscribed
-              ? `Subscribed: ${user.interval}`
-              : "Not subscribed"}
+            {user.subscription[0].stripe_subscription_status !== "active"
+              ? `You are not subscribed!`
+              : `Your subscription is ${user.subscription[0].stripe_subscription_status}`}
           </p>
           <button onClick={loadPortal}>Manage subscription</button>
         </>

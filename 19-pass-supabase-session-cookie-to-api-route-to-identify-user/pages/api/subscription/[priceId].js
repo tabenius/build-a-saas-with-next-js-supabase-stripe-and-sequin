@@ -1,7 +1,8 @@
-import { supabase } from "../../../utils/supabase";
+import { supaSecret } from "../../../utils/supabase";
 import cookie from "cookie";
 
 const handler = async (req, res) => {
+  const supabase = supaSecret();
   const { user } = await supabase.auth.api.getUserByCookie(req);
 
   if (!user) {
@@ -15,16 +16,16 @@ const handler = async (req, res) => {
   });
 
   const {
-    data: { stripe_customer },
+    data: { stripe_customer_id },
   } = await supabase
-    .from("profile")
-    .select("stripe_customer")
-    .eq("id", user.id)
+    .from("customer")
+    .select("stripe_customer_id:id")
+    .eq("metadata->>user_id", user.id)
     .single();
 
   res.send({
     ...user,
-    stripe_customer,
+    stripe_customer_id,
   });
 };
 
