@@ -6,11 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^1.28.2",
-    "next": "latest",
+    "@supabase/supabase-js": "^2.39.3",
+    "next": "12.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "stripe": "^8.191.0"
+    "stripe": "^8.213.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
